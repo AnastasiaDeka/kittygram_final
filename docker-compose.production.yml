@@ -26,7 +26,7 @@ services:
     image: aderline1989/kittygram_gateway
     env_file: .env
     volumes:
-      - static_volume:/staticfiles/
+      - static_volume:/static/
     ports:
       - 9000:80
 
