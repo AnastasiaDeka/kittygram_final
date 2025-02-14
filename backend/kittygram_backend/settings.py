@@ -14,7 +14,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', get_random_secret_key())
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['158.160.75.171', '127.0.0.1', 'localhost', 'aderline.ru']
+ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '158.160.75.171, 127.0.0.1, localhost, aderline.ru').split(',')]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
